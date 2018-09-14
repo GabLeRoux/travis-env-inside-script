@@ -4,6 +4,7 @@ language: bash
 env:
   global:
   - IMAGE_NAME=ubuntu:14.04
+  - FOO=foo
 
 services:
 - docker
@@ -14,4 +15,7 @@ jobs:
     script: ./execute_docker.sh
   - stage: test
     env: IMAGE_NAME=ubuntu:16.04
+    script: ./execute_docker.sh
+  - stage: test
+    env: FOO=bar
     script: ./execute_docker.sh
