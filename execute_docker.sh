@@ -2,5 +2,13 @@
 
 set -e
 set -x
-
-docker run -e FOO $IMAGE_NAME /bin/bash -c "echo 'hello world' && env"
+docker run \
+  -e UNITY_LICENSE_CONTENT \
+  -e TEST_PLATFORM \
+  -e UNITY_USERNAME \
+  -e UNITY_PASSWORD \
+  -e FOO \
+  -w /project/ \
+  -v $(pwd):/project/ \
+  $IMAGE_NAME \
+  /bin/bash -c "/project/ci/before_script.sh && /project/ci/test.sh"
