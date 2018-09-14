@@ -3,7 +3,7 @@ language: bash
 
 env:
   global:
-  - IMAGE_NAME=debian:14.04
+  - IMAGE_NAME=ubuntu:14.04
 
 services:
 - docker
