@@ -3,7 +3,7 @@ language: bash
 
 env:
   global:
-  - IMAGE_NAME=ubuntu:14.04
+  - IMAGE_NAME=gableroux/unity3d:2018.2.6f1
   - FOO=foo
 
 services:
