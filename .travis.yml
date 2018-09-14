@@ -1,0 +1,17 @@
+sudi: required
+language: bash
+
+env:
+  global:
+  - IMAGE_NAME=debian:14.04
+
+services:
+- docker
+
+jobs:
+  include:
+  - stage: test
+    script: ./execute_docker.sh
+  - stage: test
+    env: IMAGE_NAME=ubuntu:16.04
+    script: ./execute_docker.sh
